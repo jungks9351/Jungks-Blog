@@ -8,7 +8,7 @@ const Home: NextPage = () => {
         <title>Jungks Blog</title>
         <meta name="description" content="Create Next.js Blog" />
       </Head>
-      <div>Hello Next.js!</div>
+      <h1 className="text-3xl font-bold underline">Hello Next.js!</h1>
     </>
   )
 }
