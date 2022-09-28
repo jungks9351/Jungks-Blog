@@ -34,6 +34,7 @@ const Header = () => {
       <div className="">
         <button
           onClick={toggleTheme}
+          title="darkmode toggle button"
           className="w-10 h-10 px-2 rounded-full border-2 border-main-purple dark:border-main-purple flex items-center justify-center"
         >
           {loaded && theme === 'light' ? <SunIcon /> : <MoonIcon />}
