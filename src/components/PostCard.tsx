@@ -9,8 +9,10 @@ const PostCard = ({ post }: { post: Post }) => {
       <Image
         src={post.thumbnailUrl}
         alt="thumbnail"
-        width={300}
-        height={300}
+        priority={true}
+        layout="fixed"
+        width={100}
+        height={100}
         objectFit="cover"
       />
       <div>
