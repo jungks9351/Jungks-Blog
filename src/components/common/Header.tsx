@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <header className="py-2 text-primary mx-auto flex max-w-8xl items-center justify-between">
       <Link href={'/'}>
-        <div>
+        <h1 className="cursor-pointer">
           <Image
             src="/images/blog_logo.png"
             alt="blog logo"
@@ -25,7 +25,7 @@ const Header = () => {
             height={50}
             objectFit="cover"
           />
-        </div>
+        </h1>
       </Link>
       <div className="">
         <button
