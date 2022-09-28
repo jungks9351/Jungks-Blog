@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 
 import SunIcon from 'public/svgs/sun_icon.svg'
@@ -8,6 +8,10 @@ import MoonIcon from 'public/svgs/moon_icon.svg'
 
 const Header = () => {
   const { theme, setTheme } = useTheme()
+  const [loaded, setLoaded] = useState(false)
+  useEffect(() => {
+    setLoaded(true)
+  }, [setLoaded])
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light')
@@ -32,7 +36,7 @@ const Header = () => {
           onClick={toggleTheme}
           className="w-10 h-10 px-2 rounded-full border-2 border-main-purple dark:border-main-purple flex items-center justify-center"
         >
-          {theme === 'light' ? <SunIcon /> : <MoonIcon />}
+          {loaded && theme === 'light' ? <SunIcon /> : <MoonIcon />}
         </button>
       </div>
     </header>

@@ -11,6 +11,9 @@ module.exports = {
         'main-purple': '#5615E1',
         'sub-purple': '#8500D6',
       },
+      backgroundImage: {
+        intro: 'url(/images/intro_bg.jpg)',
+      },
     },
   },
   plugins: [],
