@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { compareDesc } from 'date-fns'
 import { allPosts, type Post } from 'contentlayer/generated'
-import PostCard from 'src/components/PostCard'
 import IntroSection from 'src/components/home/IntroSection'
+import PostSection from 'src/components/home/PostSection'
 
 export const getStaticProps = async () => {
   const posts: Post[] = allPosts.sort((a, b) => {
@@ -18,9 +18,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
         <title>JungJin Blog</title>
       </Head>
       <IntroSection />
-      {posts.map((post, idx) => (
-        <PostCard key={idx} post={post} />
-      ))}
+      <PostSection posts={posts} />
     </>
   )
 }

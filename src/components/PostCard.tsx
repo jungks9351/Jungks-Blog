@@ -1,28 +1,38 @@
 import Image from 'next/image'
 
 import { type Post } from 'contentlayer/generated'
-import { format, parseISO } from 'date-fns'
 
 const PostCard = ({ post }: { post: Post }) => {
   return (
-    <article>
-      <Image
-        src={post.thumbnailUrl}
-        alt="thumbnail"
-        priority={true}
-        layout="fixed"
-        width={100}
-        height={100}
-        objectFit="cover"
-      />
-      <div>
-        <h4>{post.title}</h4>
-        <p>{post.description}</p>
-        <time className="post-date text-color1" dateTime={post.publishedAt}>
-          {format(parseISO(post.publishedAt), 'yy. LL. dd')}
-        </time>
+    <li className="col-span-4">
+      <div className=" w-full rounded overflow-hidden shadow-lg">
+        <Image
+          src={post.thumbnailUrl}
+          alt="thumbnail"
+          priority={true}
+          layout="responsive"
+          width={100}
+          height={100}
+          objectFit="cover"
+        />
+        <div className="px-6 py-4">
+          <h4 className="font-bold text-xl mb-2">{post.title}</h4>
+          <p className="text-base text-gray-400 dark:text-slate-500">
+            {post.description}
+          </p>
+        </div>
+        <ul className="px-6 pb-4 flex flex-wrap">
+          {post.tags?.map((tag, idx) => (
+            <li
+              key={idx}
+              className="mr-3 text-sm font-medium uppercase text-sub-purple hover:text-main-purple cursor-default"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
       </div>
-    </article>
+    </li>
   )
 }
 
