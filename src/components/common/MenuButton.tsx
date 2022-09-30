@@ -12,7 +12,7 @@ const MenuButton = () => {
   return (
     <button
       onClick={toggleAnimation}
-      className="rounded-full border-2 border-black dark:border-white sm:hidden"
+      className="rounded-full border-2 border-black dark:border-white "
       title="menu button"
     >
       <MenuIcon
