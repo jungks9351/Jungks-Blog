@@ -35,8 +35,16 @@ const Header = () => {
             />
           </h1>
         </Link>
+        <div className="hidden sm:block">
+          <ul className="flex">
+            {navLinks.map((navLink) => (
+              <Link key={navLink.id} href={navLink.link}>
+                <li className="px-4">{navLink.title}</li>
+              </Link>
+            ))}
+          </ul>
+        </div>
         <div className="flex gap-5">
-          <MenuButton />
           <button
             onClick={toggleTheme}
             title="darkmode toggle button"
@@ -44,6 +52,7 @@ const Header = () => {
           >
             {loaded && theme === 'light' ? <SunIcon /> : <MoonIcon />}
           </button>
+          <MenuButton />
         </div>
       </nav>
     </header>
