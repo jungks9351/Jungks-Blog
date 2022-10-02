@@ -5,9 +5,11 @@ import IntroSection from 'src/components/home/IntroSection'
 import PostSection from 'src/components/home/PostSection'
 
 export const getStaticProps = async () => {
-  const posts: Post[] = allPosts.sort((a, b) => {
-    return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt))
-  })
+  const posts: Post[] = allPosts
+    .sort((a, b) => {
+      return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt))
+    })
+    .slice(0, 6)
   return { props: { posts } }
 }
 
