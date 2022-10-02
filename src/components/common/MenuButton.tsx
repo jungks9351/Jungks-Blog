@@ -8,10 +8,12 @@ const MenuButton = () => {
   const [menuActive, setMenuActive] = useState(false)
 
   const openMenuModal = () => {
+    document.body.style.overflow = 'hidden'
     setMenuActive(true)
   }
 
   const closeMenuModal = () => {
+    document.body.style.overflow = 'auto'
     setMenuActive(false)
   }
 

@@ -1,14 +1,13 @@
-import { MouseEventHandler, useEffect } from 'react'
+import { MouseEventHandler } from 'react'
 import ReactDOM from 'react-dom'
 import useMount from 'src/hooks/useMount'
 
 interface ModalProps {
-  modalVisible: boolean
   children: JSX.Element | JSX.Element[]
   close: () => void
 }
 
-const Modal = ({ modalVisible, children, close }: ModalProps) => {
+const Modal = ({ children, close }: ModalProps) => {
   const isMount = useMount()
 
   const closeModal: MouseEventHandler<HTMLDivElement> = (e) => {
@@ -16,14 +15,6 @@ const Modal = ({ modalVisible, children, close }: ModalProps) => {
       close()
     }
   }
-
-  useEffect(() => {
-    if (modalVisible) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'auto'
-    }
-  }, [modalVisible])
 
   return (
     <>
