@@ -33,7 +33,7 @@ const MenuButton = () => {
         />
       </button>
       {menuActive && (
-        <Modal modalVisible={menuActive} close={closeMenuModal}>
+        <Modal close={closeMenuModal}>
           <MobileMenu close={closeMenuModal} />
         </Modal>
       )}
