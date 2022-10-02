@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 // MenuButton svg
+.menu-trigger rect {
+  transition: all 0.4s;
+}
 
 .menu-trigger rect:nth-of-type(1) {
   transition: all 0.4s;
