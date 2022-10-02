@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+
 import { useTheme } from 'next-themes'
 
 import SunIcon from 'public/svgs/sun_icon.svg'
@@ -19,7 +19,7 @@ const Header = () => {
   }
 
   return (
-    <header className="absolute top-0 z-[100] w-full px-8 bg-white dark:bg-gray-900">
+    <header className="absolute top-0 z-20 w-full px-8 bg-white dark:bg-gray-900">
       <nav className="flex items-center justify-between">
         <Link href={'/'}>
           <h1 className="cursor-pointer">
