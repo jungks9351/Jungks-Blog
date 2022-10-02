@@ -37,7 +37,7 @@ const Header = () => {
           <ul className="flex">
             {navLinks.map((navLink) => (
               <Link key={navLink.id} href={navLink.link}>
-                <li className="px-4">{navLink.title}</li>
+                <li className="mx-4 cursor-pointer">{navLink.title}</li>
               </Link>
             ))}
           </ul>
