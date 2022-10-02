@@ -8,13 +8,11 @@ import MoonIcon from 'public/svgs/moon_icon.svg'
 
 import navLinks from 'src/data/navlinks'
 import MenuButton from './MenuButton'
+import useMount from 'src/hooks/useMount'
 
 const Header = () => {
   const { theme, setTheme } = useTheme()
-  const [loaded, setLoaded] = useState(false)
-  useEffect(() => {
-    setLoaded(true)
-  }, [setLoaded])
+  const isMount = useMount()
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light')
@@ -50,7 +48,7 @@ const Header = () => {
             title="darkmode toggle button"
             className="w-10 h-10 px-2 rounded-full border-2 border-black dark:border-white flex items-center justify-center"
           >
-            {loaded && theme === 'light' ? <SunIcon /> : <MoonIcon />}
+            {isMount && theme === 'light' ? <SunIcon /> : <MoonIcon />}
           </button>
           <MenuButton />
         </div>
