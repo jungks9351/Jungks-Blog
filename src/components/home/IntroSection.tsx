@@ -29,11 +29,11 @@ const IntroSection = () => {
             Hello World! 👋 <br />
             Welcome to my blog
           </h3>
-          <div className="pt-10">
-            <Link href={'/about'}>
+          <Link href={'/about'}>
+            <div className="pt-10">
               <UnderlineButton text="Learn more about me" />
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
       </div>
     </section>
