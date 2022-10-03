@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import useTypingWords from 'src/hooks/useTypingWords'
+import UnderlineButton from '../common/UnderlineButton'
 
 const IntroSection = () => {
   const title = useTypingWords('JungJin Blog', 120)
@@ -25,16 +26,12 @@ const IntroSection = () => {
         </div>
         <div className="leading-tight text-3xl mt-6  md:text-4xl text-black dark:text-white animate-fadeIn-500 opacity-0">
           <h3 className="font-bold">
-            안녕하세요! <br />
-            개발에 정진하는 <br />
-            개발자 정진입니다.
+            Hello World! 👋 <br />
+            Welcome to my blog
           </h3>
-          <div className="pt-10 cursor-pointer">
+          <div className="pt-10">
             <Link href={'/about'}>
-              <button className="group transition duration-300">
-                Learn more about me
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-black dark:bg-white"></span>
-              </button>
+              <UnderlineButton text="Learn more about me" />
             </Link>
           </div>
         </div>

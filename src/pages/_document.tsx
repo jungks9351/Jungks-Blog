@@ -9,7 +9,7 @@ const Document = () => {
         <meta name="keywords" content="nextjs,static,website,Next.js,blog" />
         <link rel="icon" href="/images/blog_logo.png" />
       </Head>
-      <body className="relative bg-white dark:bg-gray-900 transition duration-500">
+      <body className="relative bg-white dark:bg-gray-900 transition duration-500 mx-[10vw]">
         <Main />
         <NextScript />
       </body>
