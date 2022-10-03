@@ -2,6 +2,7 @@ import { type Post } from 'contentlayer/generated'
 import Link from 'next/link'
 import UnderlineButton from '../common/UnderlineButton'
 import PostCard from '../post/PostCard'
+import PostList from '../post/PostList'
 
 const PostSection = ({ posts }: { posts: Post[] }) => {
   return (
@@ -23,11 +24,7 @@ const PostSection = ({ posts }: { posts: Post[] }) => {
           </Link>
         </div>
       </div>
-      <ul className="py-10 grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-6 max-w-7xl gap-y-16 mx-auto">
-        {posts.map((post, idx) => (
-          <PostCard key={idx} post={post} />
-        ))}
-      </ul>
+      <PostList posts={posts} />
     </section>
   )
 }
