@@ -1,7 +1,7 @@
 import { type Post } from 'contentlayer/generated'
 import Link from 'next/link'
 import UnderlineButton from '../common/UnderlineButton'
-import PostCard from '../post/PostCard'
+
 import PostList from '../post/PostList'
 
 const PostSection = ({ posts }: { posts: Post[] }) => {
