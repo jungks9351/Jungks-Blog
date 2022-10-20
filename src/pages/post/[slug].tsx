@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { allPosts, type Post } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import PostDetail from 'src/components/post/PostDetail'
@@ -30,18 +29,9 @@ interface PostProps {
 const PostDetailContainer = ({ post }: PostProps) => {
   const MDXContent = useMDXComponent(post.body.code)
   return (
-    <>
-      <Head>
-        <title>{post.title}</title>
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/dracula-prism/dist/css/dracula-prism.css"
-        ></link>
-      </Head>
-      <PostDetail {...post}>
-        <MDXContent />
-      </PostDetail>
-    </>
+    <PostDetail {...post}>
+      <MDXContent />
+    </PostDetail>
   )
 }
 
